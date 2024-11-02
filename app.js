@@ -34,9 +34,7 @@ const images = document.getElementById("images");
 
 function renderedAllPhones() {
   for (var key in allImages) {
-    //   console.log(allImages[key]);
     for (var key1 in allImages[key]) {
-      // console.log(allImages[key][key1]);
       images.innerHTML += `
      <div class="col-12 col-sm-12 col-md-6 col-lg-3 images">
                 <img src="${allImages[key][key1].image}" onclick="handleClick('${allImages[key][key1].image}')" alt="phone_img">
@@ -50,7 +48,6 @@ renderedAllPhones();
 const popupImgBox = document.getElementById("popupImgBox");
 const popupImg = document.getElementById("popupImg");
 function handleClick(src) {
-  //   console.log("Image clicked:", src);
   popupImgBox.style.display = "flex";
   popupImg.src = src;
 }
@@ -63,7 +60,7 @@ const iphone = document.getElementById("iphone");
 const samsung = document.getElementById("samsung");
 const googlePixel = document.getElementById("googlePixel");
 
-//  ONLY GOOGLE PIXEL PHONE SHOW
+//  ONLY GOOGLE PIXEL PHONE RENDERED
 function showGooglePxl() {
   images.innerHTML = "";
   for (var key in allImages.googlePixel) {
@@ -76,7 +73,7 @@ function showGooglePxl() {
   }
 }
 
-//  ONLY IPHONE PHONE SHOW
+//  ONLY IPHONE PHONE RENDERED
 function showIphone() {
   images.innerHTML = "";
   for (var key in allImages.iphone) {
@@ -89,7 +86,7 @@ function showIphone() {
   }
 }
 
-//  ONLY SAMSUNG PHONE SHOW
+//  ONLY SAMSUNG PHONE RENDERED
 function showSamsung() {
   images.innerHTML = "";
   for (var key in allImages.samsung) {
@@ -102,7 +99,7 @@ function showSamsung() {
   }
 }
 
-//   ALL PHONES SHOW
+//   ALL PHONES RENDERED
 function allShow() {
   images.innerHTML = "";
   renderedAllPhones();
